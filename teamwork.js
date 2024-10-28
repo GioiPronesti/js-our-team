@@ -39,8 +39,6 @@ const teamMembers = [
 
 //const newSectionElement = document.getElementById("section-cards");
 
-const newCardElement = document.getElementById("team-card");
-
 const newElementItem = document.getElementById("team-property");
 
 /*
@@ -87,11 +85,40 @@ const teamMembers = [
   },
 ];
 
-const newDomMerbersTeam = document.getElementById("new-members-team");
+// const newDomMerbersTeam = document.getElementById("new-members-team");
 
-for (i = 0; i < teamMembers.length; i++) {
-  const currentMember = teamMembers[i];
-  console.log(i, currentMember);
+// for (i = 0; i < teamMembers.length; i++) {
+//   const currentMember = teamMembers[i];
+//   console.log(i, currentMember);
+// }
 
-  newCardElement.innerHTML += `<div class="team-card"> card </div>`;
+const teamMembersElement = document.getElementById("team-members");
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const teamMember = teamMembers[i]; // Object
+
+  teamMembersElement.innerHTML += `
+
+
+    
+        <div class="card text-bg-dark mb-3" style="max-width: 540px">
+            <div class="row g-0 ">
+                <div class="col-md-4">
+                    <img src="${teamMember.img}" class="img-fluid" alt="img 1" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold"> ${teamMember.name} </h5>
+                        <p 
+                            class="card-text "> ${teamMember.role}
+                        </p>
+                        <address class="text-info"> ${teamMember.email} </address>
+                    </div>
+                </div> 
+            </div>
+        </div>  
+         
+    `;
 }
+
+console.log(teamMembersElement);
